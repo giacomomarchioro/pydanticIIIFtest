@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+iiif_3_0.json
+
+.virtual_documents/README.ipynb

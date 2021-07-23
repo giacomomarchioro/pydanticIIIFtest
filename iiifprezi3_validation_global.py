@@ -9,6 +9,13 @@ from typing import Any, Dict, List, Optional, Union
 from pydantic.dataclasses import dataclass
 from pydantic import AnyUrl, BaseModel, Field, confloat, constr
 
+from pydantic import BaseModel as PydanticBaseModel
+
+
+class BaseModel(PydanticBaseModel):
+    class Config:
+         validate_assignment = True
+
 
 class MyConfig:
     validate_assignment = True
@@ -99,9 +106,6 @@ class Class(BaseModel):
     id: Id
     type: str
     label: Optional[LngString] = None
-
-    class Config:
-        validate_assignment = True
 
 
 class HomepageItem(Class):
@@ -247,7 +251,6 @@ class ManifestWithConfig(Class):
 
     class Config:
          validate_assignment = True
-    
    
 #@dataclass(config=MyConfig) this returns an error
 class ManifestWithDataclassDecorator(Class):
