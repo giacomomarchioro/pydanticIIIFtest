@@ -421,8 +421,6 @@
                                 }
                             ]
                         },
-                        "id": {},
-                        "label": {},
                         "type": {
                             "type": "string",
                             "pattern": "^Manifest"
